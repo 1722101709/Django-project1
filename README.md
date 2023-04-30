@@ -3,9 +3,9 @@
 Web Application using Django Framework that includes Dice and Cards game with registration and login.
 
 # Technologies used 
-HTML
-CSS
-JavaScript
-Django FrameWork
-Postgresql
+HTML, 
+CSS, 
+JavaScript, 
+Django FrameWork, 
+Postgresql, 
 PGAdmin
