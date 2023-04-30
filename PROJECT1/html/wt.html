@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>question 5</title>
+	<link rel="stylesheet" href="{% static 'wt.css' %}">
+	<script src="{% static 'wt.js' %}"></script>
+</head>
+<body>
+	<div class="heading">
+			<h1>Resource Management System</h1>
+	</div>
+	<form>
+	<div class="container">
+
+		<div id="resource">
+		<select id="select1" onchange="update()">
+		<option selected="selected">select the type of resource</option>
+		<option value="2">journals</option>
+		<option value="3">conferences</option>
+		<option value="4">books</option>
+		<option value="5">novels</option>
+		<option value="6">magazines</option>
+		</select>
+		</div>
+		<div id="journals">
+		<select id="select2" onchange="update1()">
+		<option selected="selected">select the name of journals</option>
+		<option value="2">journal1</option>
+		<option value="3">journal2</option>
+		<option value="4">journal3</option>
+		</select>
+		</div>
+		<div id="conferences">
+		<select id="select3" onchange="update2()">
+		<option selected="selected">select the name of conferences</option>
+		<option value="2">conferences1</option>
+		<option value="3">conferences2</option>
+		<option value="4">conferences3</option>
+		</select>
+		</div>
+		<div id="books">
+		<select id="select4" onchange="update3()">
+		<option selected="selected">select the name of book</option>
+		<option value="2">book1</option>
+		<option value="3">book2</option>
+		<option value="4">book3</option>
+		</select>
+		</div>
+
+		<div id="novels">
+		<select id="select5" onchange="update4()">
+		<option selected="selected">select the name of novel</option>
+		<option value="2">novel1</option>
+		<option value="3">novel2</option>
+		<option value="4">novel3</option>
+		</select>
+		</div>
+
+		<div id="magazines">
+		<select id="select6" onchange="update5()">
+		<option selected="selected">select the name of magazine</option>
+		<option value="2">magazine1</option>
+		<option value="3">magazine2</option>
+		<option value="4">magazine3</option>
+		</select>
+		</div>
+
+	</div>
+	<button onclick="display()">Submit</button>
+</form>
+
+</body>
+</html>

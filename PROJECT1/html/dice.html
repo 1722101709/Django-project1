@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dice Game</title>
+	<link rel="stylesheet" href="{% static 'dice.css' %}">
+	<script src="{% static 'dice.js' %}"></script>
+</head>
+<body>
+	<h1 id="heading">Welcome To The Dice Game Mate!</h1>
+	<div>
+	 <div>
+	 <p id="count-list"><label>select number of players in the game:-</label>
+	 <select id="select1" onchange="update1()">
+		<option selected="selected">select no of players</option>
+		<option value="2">2</option>		
+		<option value="3">3</option>		
+		<option value="4">4</option>		
+	 </select></p>
+    </div>
+    <div>
+    <p  id="type-list"><label>select the winning type of the game:-</label>
+	<select id="select2" onchange="update2()">
+		<option selected="selected">select the type of winning</option>
+		<option value="2">best of 2</option>
+		<option value="3">best of 3</option>
+		<option value="5">best of 5</option>
+		<option value="7">best of 7</option>
+	</select>
+    </p>
+    </div>
+    </div>
+    <div>
+    	<div>
+    		<p id="p12">
+                <label class="score1">player1</label>
+                <textarea name="score1" id="score1" cols="5" rows="2"></textarea>
+
+    			<label class="score2">player2</label>
+    			<textarea name="score2" id="score2" cols="5" rows="2"></textarea>
+    		</p>
+
+    		<p id="p34">
+    			<label class="score3">player3</label>
+    			<textarea name="score3" id="score3" cols="5" rows="2"></textarea>
+
+    			<label class="score4">player4</label>
+    			<textarea name="score4" id="score4" cols="5" rows="2"></textarea>
+    		 </p>
+
+    	</div>
+
+    	<div>
+    		<input onclick="fun()" type="button" id="button-dice" value="DICE"/>
+    	</div>
+    	<div>
+    		<textarea name="output" id="output" cols="3" rows="30">          =====&gt;SCORE-BOARD&lt;======</textarea>
+    	</div>
+    </div>
+
+    <div>
+    	<a href="play"><button id="back">&lt-back</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Handling</title>
+</head>
+<body>
+<h1>Data Handling example</h1>
+<form action="datahandling" method="post">
+    {% csrf_token %}
+<p><label>enter first number</label><input type="text" name="var1"></p>
+<p><label>enter second number</label><input type="text" name="var2"></p>
+<button>calculatesum</button>
+</form>
+</body>
+</html>

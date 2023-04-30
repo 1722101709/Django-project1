@@ -1,0 +1,62 @@
+*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		min-height: 100vh;
+		background: #000;
+		color: #fff;
+	}
+	.heading h1{
+		text-align: center;
+		font-weight: 600;
+		animation: shine 1s infinite;
+	}
+	@keyframes shine {
+		0%,20%,40%,60%,80%{
+		text-shadow: none;
+		}
+		20.1%,40.1%,60.1%,80.1%,100%{
+		text-shadow: 0 0 10px #fff,
+		             0 0 20px #fff,
+		             0 0 50px #fff,
+		             0 0 120px #fff;
+		}
+	}
+	.container{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-content:center;
+		flex-direction: column;
+		gap: 10vh;
+	}
+	#journals , #conferences , #books , #novels , #magazines{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-content:center;
+		visibility: hidden;
+
+	}
+	#select1,#select2,#select3,#select4,#select5,#select6{
+	    background:black;
+		color:#fff;
+		width:cover;
+		border: 5px solid yellow;
+		border-radius:10px;
+		width:250px;
+	}
+	button{
+		position: absolute;
+		top: 20vh;
+		background:black;
+		border: 3px solid yellow;
+		color:cyan;
+		width: 80px;
+		height:30px;
+		border-radius: 10px;
+		left: 3px;
+	}
+

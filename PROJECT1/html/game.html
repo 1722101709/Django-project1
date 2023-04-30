@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game</title>
+	<link rel="stylesheet" href="{% static 'game.css' %}">
+</head>
+<body>
+	<h1 id="heading">Welcome To The Game</h1>
+  <div>
+  	<p class="heading">
+		<h6 id="dice-heading">Dice Game</h6>
+		<h6 id="deck-heading">Cards Game</h6>
+	</p>
+	<a href="dice">
+		<img id="dice" src="/static/dice.jpg" alt="DICE">
+	</a>
+	<a href="deck">
+	<img id="deck" src="/static/deck.jpg" alt="DECK OF CARDS">
+	</a>
+</div>
+	<div>
+		<a href="login"><button id="back">&lt-Logout</button></a>
+	</div>
+</body>
+</html>

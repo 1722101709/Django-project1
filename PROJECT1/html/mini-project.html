@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Mini Project</title>
+</head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+<link rel="stylesheet" type="text/css" href="{% static 'mini-project.css' %}">
+<script>
+	function set_data(){
+		var val="{{Data.0.query}}";
+		if(val==""){
+			document.cal.screen.value="";
+		}
+		else{
+			document.cal.screen.value=val.substring(val.indexOf('=') + 1);
+		}
+	}
+</script>
+<body onload="set_data()">
+    <a href="response"><button id="back">&lt-Logout</button></a>
+	<h1 class="heading">
+		<p><maquee>Calculator</maquee></p>
+	</h1>
+	<div class="container">
+		   <label class="icon">
+		   	<input type="checkbox" onclick="history()" id="check">
+		    <i class="fa fa-history" aria-hidden="true"></i>
+			</label>
+		   <div class="border">
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		   </div>
+			<form class="calculator" name="cal">
+				{% csrf_token %}
+				<input type="text" readonly class="screen" name="screen">
+				<span class="num" onclick="document.cal.screen.value='' ">C</span>
+				<span class="num" onclick="backspace()">&lt;=</label></span>
+				<span class="num" onclick="document.cal.screen.value+='.' ">.</span>
+				<span class="num" onclick="document.cal.screen.value+='/' ">/</span>
+				<span class="num" onclick="document.cal.screen.value+='(' ">(</span>
+				<span class="num" onclick="document.cal.screen.value+=')' ">)</span>
+				<span class="num" onclick="document.cal.screen.value+='**' ">^</span>
+				<span class="num" onclick="document.cal.screen.value+='*' ">*</span>
+				<span class="num" onclick="document.cal.screen.value+='7' ">7</span>
+				<span class="num" onclick="document.cal.screen.value+='8' ">8</span>
+				<span class="num" onclick="document.cal.screen.value+='9' ">9</span>
+				<span class="num" onclick="document.cal.screen.value+='-' ">-</span>
+				<span class="num" onclick="document.cal.screen.value+='4' ">4</span>
+				<span class="num" onclick="document.cal.screen.value+='5' ">5</span>
+				<span class="num" onclick="document.cal.screen.value+='6' ">6</span>
+				<span class="num plus" onclick="document.cal.screen.value+='+' ">+</span>
+				<span class="num" onclick="document.cal.screen.value+='1' ">1</span>
+				<span class="num" onclick="document.cal.screen.value+='2' ">2</span>
+				<span class="num" onclick="document.cal.screen.value+='3' ">3</span>
+				<span class="num" onclick="document.cal.screen.value+='00' ">00</span>
+				<span class="num" onclick="document.cal.screen.value+='0' ">0</span>
+				<span class="num" onclick="document.cal.screen.value+='%' ">%</span>
+				<span class="num" id="submit" onclick="compute()">=</span>
+
+			</form>
+	</div>
+	<div class="history">
+		<textarea class="span" cols="5" rows="2" readonly>
+			{% for message in Data %}
+				{{message.id}})
+				{{message.query}}
+				{{message.date}}
+				---------------------------------
+	   		{% endfor %}
+		</textarea>
+	</div>
+    <form action="calculator" method="POST" id="form" style="display: none;">
+		{% csrf_token %}
+		<input type="text" id="query" name="query">
+		<input type="text" id="result" name="result">
+	</form>
+
+</body>
+<script type="text/javascript" src="{% static 'mini-project.js' %}"></script>
+</html>

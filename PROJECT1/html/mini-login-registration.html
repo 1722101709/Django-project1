@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sign in / Sign up</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+</head>
+	<link rel="stylesheet" href="{% static 'mini-login-registration.css' %}">
+<body>
+	<form id="form2" method="post" action="response">
+		{% csrf_token %}
+	<div class="login page">
+		<h1>Login</h1>
+		<div class="username">
+			<i class="fa fa-user"></i>
+			<input type="text" placeholder="Username" id="LogUserName" name="username2">
+		</div>
+		<div class="password">
+			<i class="fa fa-lock"></i>
+			<input type="password" placeholder="Password" id="LogPassword" name="password2">
+		</div>
+		<div class="forgot">
+			{% for message in messages %}
+	   <h5 id="message">{{message}}</h5>
+	   {% endfor %}
+		</div>
+			<div class="submit"><input type="button" onclick="login()" value="LOG IN"></div>
+	</div>
+	</form>
+
+	<form id="form1" method="post" action="response">
+		{% csrf_token %}
+	<div class="register page">
+		<h1>REGISTER</h1>
+		<div class="username">
+			<i class="fa fa-user"></i>
+			<input type="text" placeholder="Username" id="RegUserName" name="username1">
+		</div>
+		<div class="password">
+			<i class="fa fa-lock"></i>
+			<input type="password" placeholder="Password" id="RegPassword" name="password1">
+		</div>
+		<div class="confirm password">
+			<i class="fa fa-lock"></i>
+			<input type="password" placeholder="Confirm Password" id="ConfirmPassword">
+		</div>
+			<div class="submit"><input type="button" onclick="register()" value="REGISTER"></div>
+	</div>
+    </form>
+
+</body>
+	<script type="text/javascript" src="{% static 'mini-login-registration.js' %}"></script>
+</html>

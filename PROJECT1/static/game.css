@@ -1,0 +1,67 @@
+body
+{
+	font-size: medium;
+	font: sans-serif;
+	background-color: cyan;
+}
+
+#heading{
+font: italic;
+text-align: center;
+border: 5px solid yellow;
+border-radius: 7px;
+background-color: lightgreen;
+
+}
+img
+{
+	border: 5px solid white;
+	border-radius: 10px;
+	width :150px;
+	height: 150px;
+	transition: width 1s, height 1s;
+}
+img:hover
+{
+	width: 170px;
+	height: 170px;
+	border: 5px solid yellow;
+
+}
+#dice{
+	position: absolute;
+	left: 33%;
+	top: 50%;
+
+}
+#deck{
+	position: absolute;
+	right: 33%;
+	top: 50%;
+}
+#dice-heading{
+    position: absolute;
+	left: 35.5%;
+	top: 37%;
+	font-size: large;
+}
+#deck-heading{
+    position: absolute;
+	right: 35.5%;
+	top: 37%;
+	font-size: large;
+}
+
+#back{
+	position: absolute;
+	left: 1%;
+	top: 40%;
+	font-size: larger;
+	font-weight: bolder;
+	width: 100px;
+	height: 40px;
+	border-radius: 5px;
+	background-color: black;
+	color: yellow;
+	border: 2px solid violet;
+}

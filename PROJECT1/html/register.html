@@ -1,0 +1,39 @@
+{% load static %}
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'register.css' %}">
+	 <script src="{% static 'register.js' %}"></script>
+</head>
+<body>
+	<div class="register-box">
+		<h1 id="heading">Registration Form</h1>
+		<form  id="form" action="register" method="POST" onsubmit="message()">
+			{% csrf_token %}
+		<div class="textbox">
+		    <i class="fa fa-user" aria-hidden="true"></i>
+			<input id="username" type="text" placeholder="Username" name="username">
+		</div>
+	    <div class="textbox">
+	    	<i class="fa fa-lock" aria-hidden="true"></i>
+			<input id="password1" type="password" placeholder="Password" name="password1">
+		</div>
+		 <div class="textbox">
+	    	<i class="fa fa-lock" aria-hidden="true"></i>
+			<input id="password2" type="password" placeholder="Confirm Password" name="password2">
+		</div>
+		</form>
+		<input onclick="button()" type="button" class="btn"  name="submit" value="Signup"/>
+		<a class="register" href="login">if registered then login</a>
+	</div>
+
+   <div>
+	   {% for message in messages %}
+	   <h5 id="message">{{message}}</h5>
+	   {% endfor %}
+   </div>
+</body>
+</html>
